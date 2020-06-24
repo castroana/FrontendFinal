@@ -1,0 +1,107 @@
+
+  <body> 
+    <div>
+      <div class="parallax-container">
+        <div class="parallax"><img src="../../../assets/images/parallax.png"></div>
+      </div>
+    <section class="container content-center align-items-right mt-5"> 
+        <h1 class="display-4 text-secondary font-weight-bold">PUEDES COMENZAR</h1>
+
+                        <form #crearTareasForm="ngForm" (ngSubmit)= "agregarTarea()">                         
+                          <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">face</i>
+                                <input type="text" id="nombre" class="validate" placeholder="Nombre" required
+                          #nombreEncargado="ngModel" name="nombreEncargado" [(ngModel)]
+                          ="tareasRegistrada.nombreEncargado">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">create</i>
+                                <input type="text" id="tarea" class="validate" placeholder="Tarea" required
+                          #descripcionTarea="ngModel" name="descripcionTarea" [(ngModel)]
+                          ="tareasRegistrada.descripcionTarea">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s6">
+                            <i class="material-icons prefix">content_paste</i>
+                          <input type="text" id="estado" class="validate" placeholder="Estado" required
+                          #estado="ngModel" name="estado" [(ngModel)]
+                          ="tareasRegistrada.estado">
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                          <button type="submit" class="btn btn-large orange lighten-2 waves-effect waves-light right"> Crear Tarea </button>
+                        </div>
+                    </div>
+                        </form>
+                       
+<div class="container">
+    <div class="row">
+        <div class="col m5">
+            <div class="card">
+              <div class="card-content"></div>       
+                <div *ngFor= "let tarea of tareasEncontradas">
+            <form #actualizarTareasForm = "ngForm">
+            <input type = "text" id="nombre" required #nombreEncargado= 
+            "ngModel" name="nombreEncargado" [(ngModel)]="tarea.nombreEncargado">
+             <br>
+             <input type = "text" id="tarea" required #descripcionTarea= 
+             "ngModel" name="descripcionTarea" [(ngModel)]="tarea.descripcionTarea">
+             <br>
+             <input type = "text" id="estado" required #estado= 
+             "ngModel" name="estado" [(ngModel)]="tarea.estado">
+             <br>
+             <br>
+                <button type="button" class="btn btn-small indigo lighten-1 waves-effect waves-light" (click) = "editarTarea(tarea)">Editar Tarea</button>
+                <br>
+                <button type="button" class="btn btn-small red lighten-2 waves-effect waves-light" (click) = "eliminarTarea(tarea._id)">Eliminar Tarea</button>  
+            </form>    
+         </div>
+       </div>
+     </div>
+   </div>
+</div>
+</section>
+</div>     
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="../../../assets/images/parallax2.jpg"></div>
+  </div>
+</div>
+<body>
+    <footer class="page-footer amber accent-4">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Elaborador</h5>
+              <p class="grey-text text-lighten-4">Ana María Castro</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Redes Sociales</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2019 Copyright Todos los derechos Reservados
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+</body>
